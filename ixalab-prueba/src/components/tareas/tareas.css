@@ -1,0 +1,15 @@
+
+.tareas-container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content:space-around; 
+    align-items:center; 
+    gap: 50px;
+  }
+  
+  h1 {
+    font-size: 2rem; 
+    margin-bottom: 16px;
+    text-align: center; 
+  }

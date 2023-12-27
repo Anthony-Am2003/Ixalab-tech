@@ -1,9 +1,16 @@
 
 import Tareas from './components/tareas/tareas';
 import Frontend from './components/front/frontend';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
+
+  const UrlImages = [
+    'https://images.unsplash.com/photo-1525382455947-f319bc05fb35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1504713721722-f73b4ccdfe6a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+    'https://images.unsplash.com/photo-1532458198880-add09ce3b2f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80',
+    'https://images.unsplash.com/photo-1524767615-3d4139c938a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80',
+  ]
 
   const tareasPrueba = [
     {"nombre":"Frontend", "objetivos":['Crea un slider de imágenes simple utilizando HTML, CSS y JavaScript (o un framework específico si lo prefieres). Debe permitir al usuario navegar entre diferentes imágenes.', 'Diseña una página de aterrizaje que sea responsiva y se vea bien en dispositivos móviles y de escritorio. Utiliza media queries para ajustar el diseño según el tamaño de la pantalla.']},
@@ -12,7 +19,12 @@ function App() {
 ];
 
   return (
-    <Tareas tareasTech={tareasPrueba}/>
+    <Router>
+      <Routes>
+      <Route path='/' element={<Tareas tareasTech={tareasPrueba}/>}/>
+      <Route path='/frontend' element={<Frontend UrlImages={UrlImages}/>}/>
+      </Routes>
+    </Router>
   );
 }
 

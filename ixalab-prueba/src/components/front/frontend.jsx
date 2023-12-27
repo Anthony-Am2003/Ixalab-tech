@@ -1,9 +1,10 @@
 import React from "react";
+import MySlider from "./slider/slider";
 
-const Frontend = ()=>{
+const Frontend = ({UrlImages})=>{
     return(
         <div>
-            <h1>Hola</h1>
+            <MySlider images={UrlImages}/>            
         </div>
     )
 }

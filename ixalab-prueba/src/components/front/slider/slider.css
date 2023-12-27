@@ -1,0 +1,40 @@
+/* MySlider.css */
+
+.slider-container {
+    border: 2px solid #ccc; /* Borde para el contenedor del slider */
+    position: relative;
+  }
+  
+  .slider-item {
+    width: 100%;
+  }
+  
+  .slider-image {
+    width: 100%;
+  height: 90vh; /* Ajusta la altura al 100% de la altura de la ventana */
+  object-fit: cover;
+  }
+  
+  .slider-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .slider-controls button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .slider-controls button:hover {
+    background-color: #0056b3;
+  }
+  

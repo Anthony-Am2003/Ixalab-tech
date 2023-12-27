@@ -1,10 +1,10 @@
 import React from "react";
 import MySlider from "./slider/slider";
-
+import LandingPge from "./landingPage/landingPage";
 const Frontend = ({UrlImages})=>{
     return(
         <div>
-            <MySlider images={UrlImages}/>            
+            <LandingPge/> 
         </div>
     )
 }

@@ -1,8 +1,20 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+
 
 class User(BaseModel):
     id: int
@@ -43,3 +55,36 @@ def delete_user(user_id: int):
             return deleted_user
     return None
 
+class Task(BaseModel):
+    id: int
+    description: str
+
+tasks_db = []
+
+
+@app.post("/tasks/", response_model=Task)
+def create_task(task: Task):
+    tasks_db.append(task)
+    return task
+
+
+@app.get("/tasks/", response_model=List[Task])
+def read_tasks():
+    return tasks_db
+
+
+@app.get("/tasks/{task_id}", response_model=Task)
+def read_task(task_id: int):
+    for task in tasks_db:
+        if task.id == task_id:
+            return task
+    raise HTTPException(status_code=404, detail="Task not found")
+
+
+@app.delete("/tasks/{task_id}", response_model=Task)
+def delete_task(task_id: int):
+    for i, task in enumerate(tasks_db):
+        if task.id == task_id:
+            deleted_task = tasks_db.pop(i)
+            return deleted_task
+    raise HTTPException(status_code=404, detail="Task not found")

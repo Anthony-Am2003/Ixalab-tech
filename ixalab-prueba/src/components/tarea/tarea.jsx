@@ -8,7 +8,6 @@ const Tarea = ({nombre, objetivo})=>{
         {objetivo.map((element) => {
             return <p>{element}</p>
         })}
-        <button className="solution-button">Solution</button>
       </div>
     ) 
     

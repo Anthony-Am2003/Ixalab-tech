@@ -1,7 +1,9 @@
 
 import Tareas from './components/tareas/tareas';
 import Frontend from './components/front/frontend';
+import TaskList from './components/fullstack]/Tasks';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MySlider from './components/front/slider/slider';
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
       <Routes>
       <Route path='/' element={<Tareas tareasTech={tareasPrueba}/>}/>
       <Route path='/frontend' element={<Frontend UrlImages={UrlImages}/>}/>
+      <Route path= '/fullstack' element={<TaskList/>}/>
+      <Route path= '/slider'  element = {<MySlider images={UrlImages}/>}/>
       </Routes>
     </Router>
   );

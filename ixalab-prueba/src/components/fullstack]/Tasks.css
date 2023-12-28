@@ -1,0 +1,55 @@
+.container {
+    background: linear-gradient(to bottom, #000000, #808080);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow:visible;
+    min-height: 100vh;
+  }
+  
+  title {
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 16px;
+  }
+  
+  ul-tasks {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: #fff; /* Añade fondo blanco a cada tarea */
+  }
+  
+  task-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  task-button:hover {
+    background-color: #0056b3;
+  }
+  
+  input {
+    padding: 8px;
+    margin-right: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+
+
+
